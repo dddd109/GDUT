@@ -1,0 +1,146 @@
+%!TEX program = xelatex
+% 加载配置（别动）
+\input{settings.tex}
+\begin{document}
+
+% ===================== 封面 =====================
+\thispagestyle{empty}
+\begin{center}
+\vspace*{3cm}
+
+\heiti\fontsize{22pt}{24pt}\bfseries 广东工业大学
+
+\vspace{2.5cm}
+
+\heiti\fontsize{16pt}{18pt}\bfseries 本科毕业设计（论文）
+
+\vspace{2cm}
+
+\heiti\fontsize{15pt}{17pt}\bfseries
+论文题目：XXXXXXXXXXXXXXXXXXXX
+
+\vspace{2cm}
+
+\fontsize{14pt}{16pt}\selectfont
+学院：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+专业：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+学号：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+姓名：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+指导教师：\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\vspace{3cm}
+
+2026 年 5 月
+\end{center}
+\clearpage
+
+% ===================== 中文摘要 =====================
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+\chapter*{\heiti 摘\quad 要}
+\addcontentsline{toc}{chapter}{摘要}
+
+（这里写中文摘要，约400字）
+
+\vspace{1em}
+\noindent\textbf{关键词：}XXX；XXX；XXX；XXX
+
+\clearpage
+
+% ===================== 英文摘要 =====================
+\chapter*{\bfseries ABSTRACT}
+\addcontentsline{toc}{chapter}{ABSTRACT}
+
+（英文摘要）
+
+\vspace{1em}
+\noindent\textbf{Keywords：}XXX；XXX；XXX
+
+\clearpage
+
+% ===================== 目录 =====================
+\chapter*{\heiti 目\quad 录}
+\tableofcontents
+\clearpage
+
+% ===================== 正文页码（阿拉伯数字） =====================
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% ===================== 第1章 绪论 =====================
+\chapter{绪论}
+\section{研究背景与意义}
+\subsection{研究背景}
+这里写正文内容，自动小四宋体、1.5倍行距、首行缩进。
+
+\subsection{研究意义}
+本文主要完成以下工作：
+\begin{enumerate}[label=(\arabic*)]
+    \item 研究XXX
+    \item 设计XXX
+    \item 实现XXX
+\end{enumerate}
+
+\section{国内外研究现状}
+国内外学者在XXX领域开展了大量研究\cite{example1}。
+
+% ===================== 第2章 相关理论 =====================
+\chapter{相关理论与技术}
+\section{Spark Streaming 原理}
+DStream是离散流，本质是RDD序列。
+
+% ===================== 公式示例 =====================
+\section{公式写法}
+单词统计计算公式如下：
+\begin{equation}\label{eq:count}
+    Count(w) = \sum_{i=1}^N 1
+\end{equation}
+由式(\ref{eq:count})可知XXX。
+
+% ===================== 图片示例 =====================
+\section{图片写法}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/arch.png}
+    \caption{Spark Streaming 架构图}
+    \label{fig:arch}
+\end{figure}
+图\ref{fig:arch}为系统整体架构。
+
+% ===================== 表格示例（三线表） =====================
+\section{表格写法}
+\begin{table}[htbp]
+    \centering
+    \caption{实验环境}
+    \label{tab:env}
+    \begin{tabular}{cc}
+        \toprule
+        项目 & 配置 \\
+        \midrule
+        系统 & CentOS 7 \\
+        Spark版本 & 2.4.0 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% ===================== 结论 =====================
+\chapter{结论与展望}
+本文完成XXX，未来可进一步研究XXX。
+
+% ===================== 参考文献 =====================
+\chapter*{\heiti 参考文献}
+\addcontentsline{toc}{chapter}{参考文献}
+\bibliography{ref}
+
+% ===================== 致谢 =====================
+\chapter*{\heiti 致\quad 谢}
+\addcontentsline{toc}{chapter}{致谢}
+感谢指导教师XXX的悉心指导，感谢实验室同学的帮助。
+
+% ===================== 附录 =====================
+\chapter*{\heiti 附\quad 录}
+\addcontentsline{toc}{chapter}{附录}
+附录A：核心代码
+
+\end{document}

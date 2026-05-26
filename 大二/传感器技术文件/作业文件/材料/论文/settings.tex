@@ -1,0 +1,64 @@
+%!TEX program = xelatex
+% 广东工业大学 本科毕业设计(论文) 标准格式
+% 页边距、字体、行距、标题、目录、页码 全部符合手册
+% ==============================================
+\documentclass[12pt,a4paper,openany,UTF8]{ctexbook}
+
+\usepackage{fontspec}
+% 中文宋体、黑体；英文 Times New Roman
+\setCJKmainfont{SimSun}
+\setmainfont{Times New Roman}
+
+% 页边距（学校要求：上30 下25 左30 右20）
+\usepackage{geometry}
+\geometry{
+    top=30mm,
+    bottom=25mm,
+    left=30mm,
+    right=20mm,
+    includeheadfoot
+}
+
+% 1.5倍行距 + 首行缩进2字符
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+
+% 标题格式（完全按手册）
+\usepackage{titlesec}
+% 章：三号黑体加粗
+\titleformat{\chapter}[block]
+    {\centering\fontsize{16pt}{18pt}\selectfont\bfseries\heiti}
+    {第\thechapter 章}
+    {1em}{}
+% 节：小四黑体加粗
+\titleformat{\section}[block]
+    {\fontsize{12pt}{14pt}\selectfont\bfseries\heiti}
+    {\thesection}{0.5em}{}
+% 条：小四黑体
+\titleformat{\subsection}[block]
+    {\fontsize{12pt}{14pt}\selectfont\heiti}
+    {\thesubsection}{0.5em}{}
+
+% 页码：页脚右侧、小五号 Times New Roman
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\fontsize{10.5pt}{12pt}\selectfont \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% 必备宏包
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{natbib}
+\bibliographystyle{unsrtnat}
+
+% 图表按章编号（图1.1、表1.1）
+\usepackage{chngcntr}
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+
+\begin{document}
