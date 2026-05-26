@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # GDUT信工Materials
 
 广工信工资料收集归档（个人向）
@@ -29,3 +30,6 @@ A personal collection of materials for GDUT Computer Science and Engineering stu
 
 最后更新：25/5/26
 
+=======
+# GDUT
+>>>>>>> a8638e625dff43228b767281046845a88af54207
