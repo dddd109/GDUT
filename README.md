@@ -28,6 +28,4 @@ A personal collection of materials for GDUT Computer Science and Engineering stu
 - [ ] 整理和分类现有资料
 
 最后更新：25/5/26
-=======
-# GDUT
->>>>>>> ffc61e7b9ee14c5b4b64cccf16f2d1bd2bb31c14
+
