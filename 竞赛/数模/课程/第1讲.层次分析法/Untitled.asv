@@ -1,0 +1,23 @@
+A=[1 1 4 1/3 3;
+   1 1 4 1/3 3;
+   1/4 1/4 1 1/3 1/2;
+   3 3 3 1 3;
+   1/3 1/3 2 1/3 1]
+
+Sum_A=sum(A)
+B=repmat(Sum_A,5,1)
+stand_A=A./B
+
+
+clc;
+[V,D]=eig(A)
+Max_eig=max(max(D))
+D==Max_eig
+[r,c]=find(D==Max_eig,1)
+V(:,c)
+disp("特征值法求权重的结果为：")
+disp(V(:,c)./sum(V(:,c)))
+clc
+CI
+
+
