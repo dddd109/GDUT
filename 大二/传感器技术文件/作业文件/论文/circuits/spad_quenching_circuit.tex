@@ -1,0 +1,72 @@
+% SPAD Active/Passive Quenching Circuit
+\documentclass[preview, border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc, arrows.meta, shapes, fit}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\begin{document}
+\begin{tikzpicture}[
+    scale=0.9,
+    box/.style={draw, rounded corners=2pt, align=center, font=\small, minimum width=2.8cm, minimum height=0.9cm},
+    sbox/.style={draw, rounded corners=2pt, align=center, font=\footnotesize, minimum width=2.2cm, minimum height=0.7cm},
+    lbl/.style={font=\footnotesize},
+]
+
+% Title
+\node[font=\bfseries] at (0, 2.5) {SPAD淬灭与复位电路 --- SiPM光子计数前端};
+
+% === PASSIVE QUENCHING ===
+\node[font=\bfseries, blue] at (-3.5, 1.5) {(a) 无源淬灭};
+\node[sbox, fill=blue!5] (vapd) {$V_{APD}$\\{\footnotesize $>V_{BR}$}};
+\node[sbox, fill=red!8, below=1.2cm of vapd] (rq) {淬灭电阻\\$R_Q$\\{\footnotesize 100k$\Omega$-1M$\Omega$}};
+\node[sbox, fill=green!8, below=1.2cm of rq] (spad_p) {SPAD\\{\footnotesize Geiger模式}};
+
+\draw[->] (vapd.south) -- (rq.north);
+\draw[->] (rq.south) -- (spad_p.north);
+\draw (spad_p.south) -- ++(0,-1.0) node[ground] {};
+
+% Passive timing
+\node[box, fill=blue!5, right=0.5cm of rq] (ptime) {
+    \textbf{无源淬灭时序}\\[4pt]
+    {\small 优点: 结构简单，面积小}\\[2pt]
+    {\small 缺点: Dead Time 50-500ns}\\[2pt]
+    {\small 光子计数率 < 10MHz}
+};
+
+\draw[->, dashed] (rq.east) -- (ptime.west);
+
+% === ACTIVE QUENCHING ===
+\node[font=\bfseries, blue] at (3.5, 1.5) {(b) 主动淬灭};
+
+\node[sbox, fill=blue!5] (vapd2) {$V_{APD}$};
+\node[box, fill=orange!10, below=1.0cm of vapd2, minimum width=3cm] (aq) {
+    \textbf{主动淬灭反馈}\\[3pt]
+    {\small 检测雪崩 → 拉低偏压}\\[2pt]
+    {\small 雪崩停止 → 恢复偏压}};
+\node[sbox, fill=green!8, below=1.0cm of aq] (spad_a) {SPAD\\{\footnotesize Geiger模式}};
+
+\draw[->] (vapd2.south) -- (aq.north);
+\draw[->] (aq.south) -- (spad_a.north);
+\draw (spad_a.south) -- ++(0,-0.8) node[ground] {};
+
+% Active timing
+\node[box, fill=orange!5, right=0.5cm of aq] (atime) {
+    \textbf{主动淬灭时序}\\[4pt]
+    {\small 优点: Dead Time 2-10ns}\\[2pt]
+    {\small 光子计数率 > 100MHz}\\[2pt]
+    {\small 缺点: 电路复杂，功耗高}
+};
+
+\draw[->, dashed] (aq.east) -- (atime.west);
+
+% SiPM Macro
+\node[box, fill=cyan!8, below=3.5cm of spad_p, minimum width=14cm, xshift=2cm] (sipm) {
+    \textbf{SiPM (硅光电倍增管) = N个SPAD微单元并联}\\[4pt]
+    $I_\text{SiPM} = \dfrac{N_\text{fired}}{N_\text{micro}} \cdot G_\text{SPAD} \cdot q$\qquad
+    $P_\text{det}=1-\exp\left(-\int_0^{T_g}[\eta_\text{PDE}\cdot\Phi_{ph}(t)+DCR]\,dt\right)$\\[4pt]
+    {\footnotesize 线性区: $N_\text{fired}\ll N_\text{micro}$ \ $\Rightarrow$ \ $I_\text{SiPM}\propto\Phi_{ph}$ \quad|\quad
+    饱和区: $N_\text{fired}\to N_\text{micro}$ \ $\Rightarrow$ \ 非线性响应}
+};
+
+\end{tikzpicture}
+\end{document}

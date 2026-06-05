@@ -1,0 +1,62 @@
+% Ultrasonic Sensor Driver and Receiver Circuit
+\documentclass[preview, border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc, arrows.meta, shapes, fit}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\begin{document}
+\begin{tikzpicture}[
+    scale=0.9,
+    box/.style={draw, rounded corners=2pt, align=center, font=\small, minimum width=2.0cm, minimum height=0.8cm},
+    sbox/.style={draw, rounded corners=2pt, align=center, font=\footnotesize, minimum width=1.6cm, minimum height=0.6cm},
+    lbl/.style={font=\footnotesize},
+]
+
+% Title
+\node[font=\bfseries] at (0, 4.5) {超声波雷达驱动与接收电路};
+
+% === TRANSMIT PATH ===
+\node[box, fill=blue!10] (mcu) {MCU\\{\footnotesize 脉冲发生器}};
+\node[box, fill=orange!10, right=1.5cm of mcu] (boost) {DC-DC升压\\{\footnotesize 3.3V→100-300V}};
+\node[box, fill=orange!5, right=1.5cm of boost] (tx_drv) {发射驱动\\{\footnotesize 变压器/电荷泵}};
+\node[box, fill=red!8, right=1.5cm of tx_drv] (pzt) {压电陶瓷\\换能器\\{\footnotesize PZT 40kHz}};
+
+\draw[->] (mcu) -- (boost) node[midway, above, lbl] {PWM};
+\draw[->] (boost) -- (tx_drv);
+\draw[->, thick, red] (tx_drv) -- (pzt) node[midway, above, lbl] {100-300Vpp};
+
+% Burst pulses annotation
+\node[lbl, below=0.5cm of pzt] {8-16周期脉冲群};
+
+% === RECEIVE PATH ===
+\node[box, fill=green!8, right=1.5cm of pzt] (lna) {LNA\\{\footnotesize 前置放大}};
+\node[box, fill=green!10, right=1.2cm of lna] (bpf) {BPF\\{\footnotesize 40-58kHz}};
+\node[box, fill=yellow!10, right=1.2cm of bpf] (vga) {VGA\\{\footnotesize 时间增益控制}};
+\node[box, fill=red!10, right=1.2cm of vga] (comp) {阈值比较器\\{\footnotesize TGC自适应}};
+\node[box, fill=blue!5, right=1.2cm of comp] (tdc) {时间戳\\记录};
+
+\draw[->, thick, blue!50!black] (pzt.east) -- ++(0.3,0) |- (lna.west) node[pos=0.25, above, lbl] {回波};
+\draw[->] (lna) -- (bpf);
+\draw[->] (bpf) -- (vga);
+\draw[->] (vga) -- (comp);
+\draw[->] (comp) -- (tdc);
+
+% === REVERB SUPPRESSION ===
+\node[sbox, fill=gray!10, above=1.2cm of lna] (blank) {振铃抑制\\{\footnotesize 盲区时间}};
+\draw[->, dashed] (blank) -- (lna);
+
+% === EQUATIONS ===
+\node[box, fill=cyan!8, below=2cm of pzt, minimum width=14cm] (eq) {
+    \textbf{核心公式}\quad
+    $R=\frac{1}{2}v_s\Delta t$\quad
+    $v_s(T)=331.3\sqrt{1+\frac{T}{273.15}}\approx 331.3+0.606T\;(\text{m/s})$\quad
+    温度补偿: $\pm 1\%$测距误差
+};
+
+% === ASIC NOTE ===
+\node[box, fill=magenta!8, below=0.8cm of eq, minimum width=12cm] (asic) {
+    \textbf{集成方案:} Elmos E524 / TDK ICS-43434 ASIC --- 集成升压+脉冲发生+LNA+BPF+VGA+比较器+ADC+SPI于单一QFN-20封装(4×4mm)
+};
+
+\end{tikzpicture}
+\end{document}

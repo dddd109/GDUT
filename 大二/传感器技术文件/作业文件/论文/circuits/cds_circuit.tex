@@ -1,0 +1,75 @@
+% CDS (Correlated Double Sampling) Circuit for CMOS Image Sensor
+\documentclass[preview, border=10pt]{standalone}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{circuits.ee.IEC, positioning, calc, arrows.meta}
+\usepackage{xcolor}
+\begin{document}
+\begin{tikzpicture}[
+    scale=1.1,
+    box/.style={draw, rounded corners=2pt, minimum width=2.2cm, minimum height=1.0cm, align=center, font=\small},
+    amp/.style={draw, isosceles triangle, isosceles triangle apex angle=60, minimum height=1.5cm, minimum width=1.8cm},
+    sw/.style={draw, minimum width=0.7cm, minimum height=0.5cm},
+    lbl/.style={font=\footnotesize},
+]
+
+% Photodiode and pixel
+\node[box, fill=blue!5] (pd) {Pinned\\Photodiode};
+\node[box, fill=blue!5, right=1.2cm of pd] (sf) {Source\\Follower};
+\node[right=1.2cm of sf] (pix_out) {};
+
+\draw[->] (pd) -- (sf);
+\draw[->] (sf) -- ++(1.2,0) node[right] {$V_\text{pix}$};
+
+% Sampling switches
+\node[box, fill=orange!10, right=2.5cm of sf] (sh_amp) {Switched-Capacitor\\Difference Amplifier};
+
+\draw[->] (sf.east) ++(0.2,0) |- (sh_amp.west);
+
+% Cs capacitors
+\node[box, fill=green!8, below=1.5cm of sh_amp] (cs) {$C_s$ (Signal)\\[2pt]$C_r$ (Reset)};
+
+% Timing signals
+\node[lbl, above=0.5cm of sh_amp] (shr) {SHR (Reset Sample)};
+\node[lbl, below=0.1cm of shr] (shs) {SHS (Signal Sample)};
+
+\draw[->] (shr) -- (sh_amp.north);
+
+% Output
+\node[box, fill=red!8, right=2cm of sh_amp] (adc) {Column\\ADC};
+\draw[->] (sh_amp) -- node[above, lbl] {$V_\text{out}=V_\text{sig}-V_\text{rst}$} (adc);
+\draw[->] (adc) -- ++(1.2,0) node[right, lbl] {Digital Out};
+
+% CDS equation box
+\node[box, fill=yellow!8, below=2cm of sh_amp, minimum width=5cm] (eq) {
+    \textbf{CDS 原理}\\[4pt]
+    $\displaystyle V_\text{out} = V_\text{signal} - V_\text{reset}$\\[4pt]
+    {\small 消除kTC噪声 + FPN固定模式噪声}
+};
+
+% Timing waveform
+\begin{scope}[shift={(0,-4.5)}]
+    \node[lbl, anchor=west] at (0, 0.5) {\textbf{时序波形}};
+
+    \draw[->] (0,0) -- (8,0) node[right] {$t$};
+
+    % Reset pulse
+    \draw[blue, thick] (0.5,0.8) -- (1.5,0.8) -- (1.5,0.1) -- (2.5,0.1) -- (2.5,0.8);
+    \node[lbl, blue, anchor=east] at (0.3,0.45) {RST};
+
+    % SHR pulse
+    \draw[red, thick] (1.2,1.4) -- (1.8,1.4) -- (1.8,0.7) -- (2.2,0.7);
+    \node[lbl, red, anchor=east] at (1.0,1.05) {SHR};
+
+    % SHS pulse
+    \draw[green!50!black, thick] (3.2,1.4) -- (4.0,1.4) -- (4.0,0.7) -- (4.5,0.7);
+    \node[lbl, green!50!black, anchor=east] at (3.0,1.05) {SHS};
+
+    % Exposure
+    \draw[->, gray] (2.0, -0.3) -- (2.0, -0.8);
+    \draw[->, gray] (4.0, -0.3) -- (4.0, -0.8);
+    \draw[gray, <->] (2.0, -0.6) -- (4.0, -0.6) node[midway, below] {曝光积分时间};
+\end{scope}
+
+\end{tikzpicture}
+\end{document}

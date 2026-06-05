@@ -1,0 +1,81 @@
+% TDC (Time-to-Digital Converter) Tapped Delay Line Architecture
+\documentclass[preview, border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc, arrows.meta, shapes, fit}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\begin{document}
+\begin{tikzpicture}[
+    scale=0.85,
+    dcell/.style={draw, minimum width=0.9cm, minimum height=0.7cm, fill=blue!8, font=\scriptsize},
+    dff/.style={draw, minimum width=0.9cm, minimum height=0.9cm, fill=green!8, font=\scriptsize},
+    lbl/.style={font=\footnotesize},
+    box/.style={draw, rounded corners=2pt, align=center, font=\small},
+]
+
+% START signal
+\node[lbl] (start) at (-1, 0) {START};
+\draw[->, thick, blue] (start.east) -- (0,0);
+
+% Delay chain
+\foreach \i in {0,1,2,3,4,5,6,7} {
+    \node[dcell] (d\i) at (\i*1.1, 0) {$\tau_\text{LSB}$};
+    \ifnum\i>0
+        \draw[thick] (d\the\numexpr\i-1.east) -- (d\i.west);
+    \fi
+}
+
+\draw[thick, blue] (0,0) -- (d0.west);
+
+% Sampling DFFs
+\foreach \i in {0,1,2,3,4,5,6,7} {
+    \node[dff] (ff\i) at (\i*1.1, -1.8) {D\\[2pt]Q};
+    \draw[->, gray] (d\i.south) -- (ff\i.north);
+    \draw[->, gray] (ff\i.east) -- ++(0.4,0);
+}
+
+% STOP signal (clock to all DFFs)
+\node[lbl] (stop) at (-1, -1.8) {STOP};
+\draw[->, thick, red] (stop.east) -- ++(0.3,0);
+\foreach \i in {0,1,2,3,4,5,6,7} {
+    \draw[->, red] (\i*1.1-1.0, -1.5) -- (\i*1.1, -1.5);
+}
+
+% Thermometer code output
+\node[box, fill=yellow!10, right=1.5cm of ff7] (therm) {
+    \textbf{温度计码}\\[4pt]
+    1 1 1 1 0 0 0 0\\
+    {\small $N=4$ (上升沿位置)}
+};
+
+\draw[->, gray] (ff7.east) ++(0.4,0) -- (ff7.east-|therm.west);
+\draw[->, gray] (ff0.east) ++(0.4,0) -- (ff0.east-|therm.west);
+
+% Equation
+\node[box, fill=orange!10, below=1.5cm of therm, minimum width=4cm] (eq) {
+    $\Delta t_\text{fine} = N \cdot \tau_\text{LSB}$\\[4pt]
+    $\tau_\text{LSB}=10\text{-}20\text{ps}$ (CMOS)
+};
+
+\draw[->] (therm.south) -- (eq.north);
+
+% Coarse counter
+\node[box, fill=blue!8, left=3cm of eq, minimum width=3cm] (coarse) {
+    \textbf{粗计数器}\\[4pt]
+    $T_\text{coarse} = N_c \times T_{clk}$
+};
+
+\node[box, fill=green!8, right=1.5cm of eq, minimum width=3cm] (final) {
+    \textbf{最终时间}\\[4pt]
+    $T = T_\text{coarse} + \Delta t_\text{fine}$
+};
+
+\draw[->] (eq.east) -- (final.west);
+\draw[->] (coarse.east) -- (final.west);
+
+% Label
+\node[lbl, above=0.8cm of d3] {\textbf{抽头延迟线 (Tapped Delay Line)}};
+\node[lbl, below=0.8cm of ff3] {\textbf{D触发器阵列采样}};
+
+\end{tikzpicture}
+\end{document}

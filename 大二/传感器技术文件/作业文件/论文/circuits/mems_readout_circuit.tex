@@ -1,0 +1,68 @@
+% MEMS IMU Switched-Capacitor Readout Circuit
+\documentclass[preview, border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc, arrows.meta, shapes, fit, circuits.ee.IEC}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\begin{document}
+\begin{tikzpicture}[
+    scale=0.9,
+    box/.style={draw, rounded corners=2pt, align=center, font=\small, minimum width=2.5cm, minimum height=0.9cm},
+    sbox/.style={draw, rounded corners=2pt, align=center, font=\footnotesize, minimum width=2cm, minimum height=0.7cm},
+    lbl/.style={font=\footnotesize},
+]
+
+% Title
+\node[font=\bfseries] at (0, 4.2) {MEMS电容式加速度计/陀螺仪 --- 开关电容读出电路};
+
+% MEMS structure
+\node[box, fill=blue!10, minimum width=3cm] (mems) {MEMS梳齿结构\\[3pt]
+    $C_1=C_0+\Delta C$ \quad $C_2=C_0-\Delta C$\\[3pt]
+    {\footnotesize $\Delta C \propto a$ (加速度) / $\Omega$ (角速度)}};
+
+% Differential caps
+\node[sbox, fill=blue!5, below=1.5cm of mems, xshift=-2cm] (c1) {$C_1$};
+\node[sbox, fill=blue!5, below=1.5cm of mems, xshift=2cm] (c2) {$C_2$};
+
+\draw[->] (mems.south) -- ++(0,-0.3) -| (c1.north);
+\draw[->] (mems.south) -- ++(0,-0.3) -| (c2.north);
+
+% Timing phases
+\node[lbl, above=0.5cm of c1] {$\phi_1$ (预充电)};
+\node[lbl, above=0.5cm of c2] {$\phi_2$ (检测)};
+
+% Switched-capacitor circuit
+\node[box, fill=orange!10, below=1.5cm of mems, minimum width=6cm] (sc) {
+    \textbf{开关电容差分读出}\\[4pt]
+    $\Delta V = V_\text{ref}\cdot\frac{C_1-C_2}{C_1+C_2} \approx V_\text{ref}\cdot\frac{\Delta C}{2C_0}$};
+
+\draw[->] (c1.south) -- (sc.north);
+\draw[->] (c2.south) -- (sc.north);
+
+% INA + ΣΔ ADC
+\node[box, fill=green!10, below=1.5cm of sc] (ina) {仪表放大器 (INA)\\{\footnotesize 增益 100-1000×}};
+\node[box, fill=yellow!10, below=1.2cm of ina] (sdm) {$\Sigma$-$\Delta$ ADC\\{\footnotesize 16-24bit, >100dB SNR}};
+\node[box, fill=red!8, below=1.2cm of sdm] (dig) {数字输出\\{\footnotesize $a_x, a_y, a_z$ / $\omega_x, \omega_y, \omega_z$}};
+
+\draw[->] (sc.south) -- (ina.north);
+\draw[->] (ina.south) -- (sdm.north);
+\draw[->] (sdm.south) -- (dig.north);
+
+% Chopper note
+\node[sbox, fill=magenta!8, right=1.5cm of ina] (chop) {Chopper\\Stabilization\\{\footnotesize 抑制1/f噪声}};
+\draw[->, dashed] (chop.west) -- (ina.east);
+
+% Allan Variance Note
+\node[box, fill=cyan!8, right=1.5cm of sdm, minimum width=4cm] (allan) {
+    \textbf{Allan方差噪声辨识}\\[4pt]
+    $\sigma_A^2(\tau)=\frac{1}{2}\langle(\bar{\Omega}_{k+1}-\bar{\Omega}_k)^2\rangle$\\[4pt]
+    {\footnotesize 白噪声→零偏不稳定性→随机游走}
+};
+
+% Key specs
+\node[box, fill=gray!10, below=0.8cm of dig, minimum width=12cm] (spec) {
+    \textbf{典型参数:} 陀螺仪零偏不稳定性 $0.5\text{-}5^\circ/\text{hr}$ \quad 加速度计零偏 $5\text{-}50\mu\text{g}$ \quad 带宽 100-500Hz
+};
+
+\end{tikzpicture}
+\end{document}

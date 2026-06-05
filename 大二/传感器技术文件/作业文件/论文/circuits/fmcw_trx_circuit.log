@@ -1,0 +1,619 @@
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.5.6)  20 MAY 2026 12:22
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./fmcw_trx_circuit.tex
+(fmcw_trx_circuit.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-03-20>
+(D:\program\MiKTeX\tex/latex/standalone\standalone.cls
+Document Class: standalone 2025/02/22 v1.5a Class to compile TeX sub-files stan
+dalone
+(D:\program\MiKTeX\tex/latex/tools\shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+(D:\program\MiKTeX\tex/generic/iftex\ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+
+(D:\program\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+(D:\program\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(D:\program\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+(D:\program\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+
+(D:\program\MiKTeX\tex/generic/xkeyval\keyval.tex))
+\XKV@depth=\count271
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\sa@internal=\count272
+\c@sapage=\count273
+
+(D:\program\MiKTeX\tex/latex/standalone\standalone.cfg
+File: standalone.cfg 2025/02/22 v1.5a Default configuration file for 'standalon
+e' class
+)
+(D:\program\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\program\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count274
+\c@section=\count275
+\c@subsection=\count276
+\c@subsubsection=\count277
+\c@paragraph=\count278
+\c@subparagraph=\count279
+\c@figure=\count280
+\c@table=\count281
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen150
+)
+(D:\program\MiKTeX\tex/latex/preview\preview.sty
+Package: preview 2024/06/30 14.0.6 (AUCTeX/preview-latex)
+
+(D:\program\MiKTeX\tex/latex/luatex85\luatex85.sty
+Package: luatex85 2016/06/15 v1.4 pdftex aliases for luatex
+)
+(D:\program\MiKTeX\tex/latex/preview\prtightpage.def
+\PreviewBorder=\dimen151
+)
+\pr@snippet=\count282
+\pr@box=\box53
+\pr@output=\toks19
+))
+(D:\program\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty
+(D:\program\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(D:\program\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty
+(D:\program\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks20
+\pgfutil@tempdima=\dimen152
+\pgfutil@tempdimb=\dimen153
+)
+(D:\program\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box54
+)
+(D:\program\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex
+(D:\program\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\program\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty
+(D:\program\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\program\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\program\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(D:\program\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 106.
+
+(D:\program\MiKTeX\tex/latex/graphics-def\xetex.def
+File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen154
+\Gin@req@width=\dimen155
+)
+(D:\program\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty
+(D:\program\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\program\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
+
+(D:\program\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks23
+))
+\pgf@x=\dimen156
+\pgf@y=\dimen157
+\pgf@xa=\dimen158
+\pgf@ya=\dimen159
+\pgf@xb=\dimen160
+\pgf@yb=\dimen161
+\pgf@xc=\dimen162
+\pgf@yc=\dimen163
+\pgf@xd=\dimen164
+\pgf@yd=\dimen165
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count283
+\c@pgf@countb=\count284
+\c@pgf@countc=\count285
+\c@pgf@countd=\count286
+\t@pgf@toka=\toks24
+\t@pgf@tokb=\toks25
+\t@pgf@tokc=\toks26
+\pgf@sys@id@count=\count287
+
+(D:\program\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
+)
+Driver file for pgf: pgfsys-xetex.def
+
+(D:\program\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-xetex.def
+File: pgfsys-xetex.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\program\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\program\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+)
+\pgfsys@objnum=\count288
+)))
+(D:\program\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count289
+\pgfsyssoftpath@bigbuffer@items=\count290
+)
+(D:\program\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(D:\program\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(D:\program\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 274.
+
+(D:\program\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex)
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen166
+\pgfmath@count=\count291
+\pgfmath@box=\box55
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
+)
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex)
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex)
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex
+) (D:\program\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex)
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex)
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex)
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex)
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex)
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.cod
+e.tex) (D:\program\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex)
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count292
+))
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfint.code.tex)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen167
+\pgf@picmaxx=\dimen168
+\pgf@picminy=\dimen169
+\pgf@picmaxy=\dimen170
+\pgf@pathminx=\dimen171
+\pgf@pathmaxx=\dimen172
+\pgf@pathminy=\dimen173
+\pgf@pathmaxy=\dimen174
+\pgf@xx=\dimen175
+\pgf@xy=\dimen176
+\pgf@yx=\dimen177
+\pgf@yy=\dimen178
+\pgf@zx=\dimen179
+\pgf@zy=\dimen180
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen181
+\pgf@path@lasty=\dimen182
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen183
+\pgf@shorten@start@additional=\dimen184
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box56
+\pgf@hbox=\box57
+\pgf@layerbox@main=\box58
+\pgf@picture@serial@count=\count293
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen185
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen186
+\pgf@pt@y=\dimen187
+\pgf@pt@temp=\dimen188
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen189
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen190
+\pgf@sys@shading@range@num=\count294
+\pgf@shadingcount=\count295
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box59
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(D:\program\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(D:\program\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box60
+)
+(D:\program\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(D:\program\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen191
+\pgf@nodesepend=\dimen192
+)
+(D:\program\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+))
+(D:\program\MiKTeX\tex/latex/pgf/utilities\pgffor.sty
+(D:\program\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty
+(D:\program\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex))
+(D:\program\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(D:\program\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex))
+(D:\program\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen193
+\pgffor@skip=\dimen194
+\pgffor@stack=\toks30
+\pgffor@toks=\toks31
+))
+(D:\program\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\program\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count296
+\pgfplotmarksize=\dimen195
+)
+\tikz@lastx=\dimen196
+\tikz@lasty=\dimen197
+\tikz@lastxsaved=\dimen198
+\tikz@lastysaved=\dimen199
+\tikz@lastmovetox=\dimen256
+\tikz@lastmovetoy=\dimen257
+\tikzleveldistance=\dimen258
+\tikzsiblingdistance=\dimen259
+\tikz@figbox=\box61
+\tikz@figbox@bg=\box62
+\tikz@tempbox=\box63
+\tikz@tempbox@bg=\box64
+\tikztreelevel=\count297
+\tikznumberofchildren=\count298
+\tikznumberofcurrentchild=\count299
+\tikz@fig@count=\count300
+
+(D:\program\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count301
+\pgfmatrixcurrentcolumn=\count302
+\pgf@matrix@numberofcolumns=\count303
+)
+\tikz@expandcount=\count304
+
+(D:\program\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopa
+ths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(D:\program\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryposi
+tioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(D:\program\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc
+.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(D:\program\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen260
+\pgfarrowlength=\dimen261
+\pgfarrowwidth=\dimen262
+\pgfarrowlinewidth=\dimen263
+)
+(D:\program\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshap
+es.code.tex
+File: tikzlibraryshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\program\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshap
+es.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\program\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.geometric.
+code.tex
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(D:\program\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshap
+es.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\program\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.misc.code.
+tex
+File: pgflibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(D:\program\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshap
+es.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\program\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.symbols.co
+de.tex
+File: pgflibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(D:\program\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshap
+es.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\program\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.arrows.cod
+e.tex
+File: pgflibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(D:\program\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshap
+es.callouts.code.tex
+(D:\program\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.callouts.c
+ode.tex))
+(D:\program\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshap
+es.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(D:\program\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.multipart.
+code.tex
+File: pgflibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodepartlowerbox=\box65
+\pgfnodeparttwobox=\box66
+\pgfnodepartthreebox=\box67
+\pgfnodepartfourbox=\box68
+\pgfnodeparttwentybox=\box69
+\pgfnodepartnineteenbox=\box70
+\pgfnodeparteighteenbox=\box71
+\pgfnodepartseventeenbox=\box72
+\pgfnodepartsixteenbox=\box73
+\pgfnodepartfifteenbox=\box74
+\pgfnodepartfourteenbox=\box75
+\pgfnodepartthirteenbox=\box76
+\pgfnodeparttwelvebox=\box77
+\pgfnodepartelevenbox=\box78
+\pgfnodeparttenbox=\box79
+\pgfnodepartninebox=\box80
+\pgfnodeparteightbox=\box81
+\pgfnodepartsevenbox=\box82
+\pgfnodepartsixbox=\box83
+\pgfnodepartfivebox=\box84
+)))
+(D:\program\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryfit.
+code.tex
+File: tikzlibraryfit.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (D:\program\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(D:\program\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(D:\program\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks32
+\ex@=\dimen264
+))
+(D:\program\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen265
+)
+(D:\program\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count305
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count306
+\leftroot@=\count307
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count308
+\DOTSCASE@=\count309
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box85
+\strutbox@=\box86
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen266
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count310
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count311
+\dotsspace@=\muskip17
+\c@parentequation=\count312
+\dspbrk@lvl=\count313
+\tag@help=\toks33
+\row@=\count314
+\column@=\count315
+\maxfields@=\count316
+\andhelp@=\toks34
+\eqnshift@=\dimen267
+\alignsep@=\dimen268
+\tagshift@=\dimen269
+\tagwidth@=\dimen270
+\totwidth@=\dimen271
+\lineht@=\dimen272
+\@envbody=\toks35
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks36
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+)
+(D:\program\MiKTeX\tex/latex/l3backend\l3backend-xetex.def
+File: l3backend-xetex.def 2026-02-18 L3 backend support: XeTeX
+\g__graphics_track_int=\count317
+\g__pdfannot_backend_int=\count318
+\g__pdfannot_backend_link_int=\count319
+)
+No file fmcw_trx_circuit.aux.
+\openout1 = `fmcw_trx_circuit.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+Preview: Fontsize 10pt
+Preview: PDFoutput 1
+Missing character: There is no 毫 in font [lmroman10-bold]:mapping=tex-text;!
+Missing character: There is no 米 in font [lmroman10-bold]:mapping=tex-text;!
+Missing character: There is no 波 in font [lmroman10-bold]:mapping=tex-text;!
+Missing character: There is no 雷 in font [lmroman10-bold]:mapping=tex-text;!
+Missing character: There is no 达 in font [lmroman10-bold]:mapping=tex-text;!
+Missing character: There is no 收 in font [lmroman10-bold]:mapping=tex-text;!
+Missing character: There is no 发 in font [lmroman10-bold]:mapping=tex-text;!
+Missing character: There is no 链 in font [lmroman10-bold]:mapping=tex-text;!
+Missing character: There is no 路 in font [lmroman10-bold]:mapping=tex-text;!
+Missing character: There is no 频 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 率 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 合 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 成 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 器 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 分 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 数 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 分 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 频 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 参 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 考 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 晶 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 振 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 功 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 率 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 放 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 大 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 器 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 天 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 线 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 目 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 标 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 物 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 体 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 发 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 射 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 回 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 波 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 天 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 线 in font [lmroman8-regular]:mapping=tex-text;!
+Missing character: There is no 低 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 噪 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 声 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 放 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 大 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 器 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 混 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 频 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 器 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 放 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 大 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 链 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 抗 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 混 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 叠 in font [lmroman9-regular]:mapping=tex-text;!
+Missing character: There is no 核 in font [lmroman9-bold]:mapping=tex-text;!
+Missing character: There is no 心 in font [lmroman9-bold]:mapping=tex-text;!
+Missing character: There is no 公 in font [lmroman9-bold]:mapping=tex-text;!
+Missing character: There is no 式 in font [lmroman9-bold]:mapping=tex-text;!
+Missing character: There is no 单 in font [lmroman10-bold]:mapping=tex-text;!
+Missing character: There is no 芯 in font [lmroman10-bold]:mapping=tex-text;!
+Missing character: There is no 片 in font [lmroman10-bold]:mapping=tex-text;!
+
+Overfull \hbox (443.26006pt too wide) in paragraph at lines 76--77
+[][] 
+ []
+
+Preview: Tightpage -655360 -655360 655360 655360
+[1] (fmcw_trx_circuit.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-03-20>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 15306 strings out of 402807
+ 325246 string characters out of 5450725
+ 763935 words of memory out of 5000000
+ 43932 multiletter control sequences out of 15000+600000
+ 631398 words of font info for 58 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 102i,8n,107p,468b,776s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on fmcw_trx_circuit.pdf (1 page).

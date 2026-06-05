@@ -1,0 +1,83 @@
+\contentsline {chapter}{摘要}{I}{chapter*.1}%
+\contentsline {chapter}{ABSTRACT}{II}{chapter*.2}%
+\contentsline {chapter}{目录}{IV}{chapter*.3}%
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}绪论与市场前景分析}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}研究背景：自动驾驶的感知需求}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}全球与中国自动驾驶传感器市场规模}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}核心传感器细分市场分析}{3}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}激光雷达市场}{3}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}毫米波雷达市场}{3}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}车载摄像头市场}{3}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}典型企业及岗位分析}{3}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}其域创新（XGRIDS）—— 3D激光雷达与空间数字化}{3}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}禾赛科技与速腾聚创}{4}{subsection.1.4.2}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}视觉摄像机传感器}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}工作原理}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}光电转换的物理基础}{5}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}CMOS有源像素结构（4T-APS）}{5}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}核心元器件}{5}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}相关双采样（CDS）降噪原理}{5}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}列级ADC架构}{6}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}车载摄像头的分类与应用}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}车载摄像头的关键技术挑战}{6}{section.2.4}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}毫米波雷达传感器}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}工作原理}{8}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}FMCW信号模型}{8}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}混频与中频信号处理}{8}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}角度估计与4D成像雷达}{9}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}核心元器件}{9}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}77GHz MMIC收发芯片}{9}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}CMOS工艺与国产替代}{9}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}毫米波雷达的性能优势与局限}{10}{section.3.3}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}超声波雷达传感器}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}工作原理}{11}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}压电换能器}{11}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}渡越时间测距模型}{11}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}温度补偿}{11}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}测量电路：驱动与回波处理}{12}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}发射驱动电路}{12}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}回波接收与阈值检测}{12}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}应用场景与性能边界}{12}{section.4.3}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}激光雷达（LiDAR）传感器}{13}{chapter.5}%
+\contentsline {section}{\numberline {5.1}工作原理}{13}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}内光电效应与单光子探测}{13}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}飞行时间法（ToF）测距模型}{13}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}调频连续波（FMCW）激光雷达}{14}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}核心元器件}{14}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}发射端：从EEL到VCSEL到多结VCSEL}{14}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}接收端：从PIN到APD到SPAD/SiPM}{15}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}固态扫描器件：MEMS与OPA}{15}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}高精度微弱信号测量电路}{16}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}跨阻放大器（TIA）——光电信号的前端调理}{16}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}时间数字转换器（TDC）——皮秒级时间间隔测量}{17}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}SPAD光子探测的统计模型}{18}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}淬灭与复位电路（Quenching Circuit）}{19}{subsection.5.3.4}%
+\contentsline {section}{\numberline {5.4}暗电流与噪声分析}{19}{section.5.4}%
+\contentsline {section}{\numberline {5.5}固态激光雷达全链路信号流图}{19}{section.5.5}%
+\contentsline {section}{\numberline {5.6}SIP系统级封装与信号完整性}{20}{section.5.6}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}惯性测量单元（IMU）传感器}{21}{chapter.6}%
+\contentsline {section}{\numberline {6.1}工作原理}{21}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}MEMS加速度计}{21}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}MEMS陀螺仪}{21}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}IMU的信号处理与误差模型}{22}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}捷联惯导解算}{22}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}误差模型与零偏不稳定性}{22}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}IMU与其他传感器的互补定位}{23}{section.6.3}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}多传感器融合与深度学习应用}{24}{chapter.7}%
+\contentsline {section}{\numberline {7.1}多传感器融合的必要性}{24}{section.7.1}%
+\contentsline {section}{\numberline {7.2}传感器融合的三个层级}{24}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}数据级融合（Low-Level / Early Fusion）}{24}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}特征级融合（Mid-Level / Feature Fusion）}{25}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}决策级融合（High-Level / Late Fusion）}{25}{subsection.7.2.3}%
+\contentsline {section}{\numberline {7.3}基于深度学习的BEV感知架构}{25}{section.7.3}%
+\contentsline {section}{\numberline {7.4}深度学习点云目标检测：PointPillars}{27}{section.7.4}%
+\contentsline {section}{\numberline {7.5}面向车载边缘计算的模型优化与部署}{27}{section.7.5}%
+\contentsline {chapter}{\numberline {第八章\hspace {.3em}}市场前景与职业规划}{29}{chapter.8}%
+\contentsline {section}{\numberline {8.1}传感器产业的关键发展趋势}{29}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}技术趋势}{29}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}成本下降曲线}{29}{subsection.8.1.2}%
+\contentsline {section}{\numberline {8.2}典型岗位与技能需求}{31}{section.8.2}%
+\contentsline {section}{\numberline {8.3}薪资水平与发展前景}{32}{section.8.3}%
+\contentsline {chapter}{\numberline {第九章\hspace {.3em}}结论与展望}{34}{chapter.9}%
+\contentsline {chapter}{参考文献}{35}{chapter*.5}%
+\contentsline {chapter}{致谢}{39}{chapter*.7}%

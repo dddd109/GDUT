@@ -1,0 +1,69 @@
+% TIA (Transimpedance Amplifier) Circuit for LiDAR
+\documentclass[preview, border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{circuits.ee.IEC, positioning, calc, arrows.meta, shapes}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\begin{document}
+\begin{tikzpicture}[
+    scale=1.0,
+    box/.style={draw, rounded corners=2pt, minimum width=2.5cm, minimum height=0.9cm, align=center, font=\small},
+    lbl/.style={font=\footnotesize},
+    rbox/.style={draw, minimum width=1.5cm, minimum height=0.7cm, align=center, font=\footnotesize},
+]
+
+% Photodiode (APD/SPAD)
+\node[box, fill=blue!10] (pd) {APD / SPAD\\光电探测器};
+\node[lbl, below=0.2cm of pd] {$I_{ph}(t)$ 微弱电流脉冲};
+
+% TIA Op-Amp
+\node[draw, isosceles triangle, isosceles triangle apex angle=60, minimum height=2.2cm, minimum width=2.2cm,
+      fill=green!10, right=1.8cm of pd] (opamp) {};
+
+\node[font=\small, below=0.1cm of opamp] {TIA};
+
+% Connections: PD cathode → inverting input
+\draw[->] (pd.east) -- (opamp.left corner) node[midway, above, lbl] {$I_{in}$};
+\draw (opamp.right corner) -- ++(0.8,0) node[midway, above, lbl] {};
+
+% Feedback network: Rf || Cf
+\node[rbox, above=1.5cm of opamp] (rf) {$R_f$ (反馈电阻)};
+\node[rbox, right=0.3cm of rf] (cf) {$C_f$ (补偿电容)};
+
+\draw (opamp.top) -- ++(0,1.0) -| (rf.south);
+\draw (rf.north) -- ++(0,0.3) -| (cf.south);
+\draw (cf.north) -- ++(0,0.3) -| ++(1.2,-2.3) -- (opamp.right corner);
+\draw (opamp.left corner) -- ++(0,0) -- (opamp.left corner);
+
+% Inverting input connection
+\draw (pd.east) -- (opamp.left corner) node[midway, above] {$-$};
+\node[lbl] at ($(opamp.left corner)!0.5!(opamp.right corner)+(0,0.3)$) {$-$};
+\node[lbl] at ($(opamp.left corner)!0.5!(opamp.right corner)-(0,0.3)$) {$+$};
+
+% Non-inverting input to ground
+\draw (opamp.right corner) ++(0.5,-0.5) -- ++(0,-0.8) node[ground] {};
+
+% Parasitic capacitance
+\node[lbl, red] at ($(pd.east)!0.3!(opamp.left corner)+(0,-0.7)$) {$C_d$ (结电容)};
+
+% Output
+\node[box, fill=orange!10, right=1.5cm of opamp] (out) {$V_{out}(t)$\\电压脉冲输出};
+\draw[->] (opamp.right corner) -- (out) node[midway, above, lbl] {$V_{out}=-I_{in}R_f$};
+
+% Noise sources annotation
+\node[box, fill=yellow!10, below=1.8cm of opamp, minimum width=8cm] (noise) {
+    \textbf{TIA 噪声来源：}\\[4pt]
+    \small (1) $\overline{i_{n,R_f}^2}=4kT/R_f$ \quad 反馈电阻热噪声\\
+    \small (2) $\overline{e_n^2}\cdot[(1/R_f^2)+(2\pi f)^2(C_d+C_f)^2]$ \quad 运放电压噪声\\
+    \small (3) $\overline{i_n^2}$ \quad 运放输入电流噪声
+};
+
+% Bandwidth note
+\node[box, fill=red!8, right=0.5cm of out, minimum width=2.5cm] (bw) {
+    \textbf{带宽要求}\\[4pt]
+    $f_{-3dB} \ge \frac{0.35}{t_r}$\\[4pt]
+    {\small $t_r=1\text{ns}\Rightarrow f\ge350\text{MHz}$}
+};
+
+\end{tikzpicture}
+\end{document}

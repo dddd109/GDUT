@@ -1,0 +1,77 @@
+% FMCW Radar Transceiver Circuit (Mixer + IF Chain)
+\documentclass[preview, border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc, arrows.meta, shapes, fit}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\begin{document}
+\begin{tikzpicture}[
+    scale=0.9,
+    box/.style={draw, rounded corners=2pt, align=center, font=\small, minimum width=2.2cm, minimum height=0.9cm},
+    sbox/.style={draw, rounded corners=2pt, align=center, font=\footnotesize, minimum width=1.8cm, minimum height=0.7cm},
+    lbl/.style={font=\footnotesize},
+]
+
+% Title
+\node[font=\bfseries] at (0, 2.8) {FMCW毫米波雷达收发链路};
+
+% Chirp Generator / PLL
+\node[box, fill=blue!10] (pll) {PLL频率合成器\\{\footnotesize 分数N分频$\Sigma$-$\Delta$}};
+\node[sbox, fill=blue!5, left=2cm of pll] (ref) {77GHz\\参考晶振};
+
+% VCO
+\node[box, fill=blue!10, right=1.5cm of pll] (vco) {VCO\\{\footnotesize 76-81GHz}};
+
+\draw[->] (ref) -- (pll);
+\draw[->] (pll) -- (vco);
+\draw[->] (vco) -- ++(0.5,0) node[right, lbl] {Chirp};
+
+% Transmit path
+\node[box, fill=orange!10, below=1.8cm of vco] (pa) {PA\\功率放大器};
+\node[sbox, fill=orange!5, right=1.5cm of pa] (tx_ant) {TX\\天线};
+
+\draw[->] (vco.south) -- (pa.north) node[midway, right, lbl] {LO};
+\draw[->] (pa) -- (tx_ant);
+
+% Target
+\node[box, fill=gray!15, right=4cm of tx_ant] (target) {目标物体\\{\footnotesize $\sigma$ RCS}};
+\draw[->, thick, red] (tx_ant) -- (target) node[midway, above, lbl] {77GHz发射};
+\draw[->, thick, blue!50!black] (target.south) -- ++(0,-1.2) -| ++(-5.5, -0.8) node[midway, above, lbl, pos=0.7] {回波};
+
+% Receive path
+\node[sbox, fill=green!5, below=3cm of tx_ant] (rx_ant) {RX\\天线};
+\node[box, fill=green!10, left=1.5cm of rx_ant] (lna) {LNA\\低噪声放大器};
+
+\draw[<-] (rx_ant) -- (lna) node[midway, above, lbl] {$\tau=2R/c$};
+
+% Mixer
+\node[box, fill=red!10, left=1.5cm of lna] (mixer) {Mixer\\混频器};
+
+\draw[->] (lna) -- (mixer);
+\draw[->] (vco.south) -- ++(0,-0.5) -| (mixer.north) node[pos=0.3, right, lbl] {LO};
+
+% IF chain
+\node[box, fill=yellow!10, left=1.5cm of mixer] (if_amp) {IF放大链\\PGA+VGA};
+\node[box, fill=yellow!10, left=1.5cm of if_amp] (lpf) {抗混叠\\LPF};
+\node[box, fill=yellow!10, left=1.5cm of lpf] (adc) {12-16bit\\ADC};
+
+\draw[->] (mixer) -- (if_amp) node[midway, above, lbl] {$f_{IF}$};
+\draw[->] (if_amp) -- (lpf);
+\draw[->] (lpf) -- (adc);
+\draw[->] (adc) -- ++(-1.2,0) node[left, lbl] {Digital};
+
+% Equations
+\node[box, fill=cyan!8, below=1.5cm of mixer, minimum width=10cm] (eq) {
+    \textbf{核心公式}\\[4pt]
+    $f_{IF}=\dfrac{2B\cdot R}{c\cdot T_c}$\quad
+    $R=\dfrac{c\cdot T_c\cdot f_{IF}}{2B}$\quad
+    $f_d=\dfrac{2v_r}{\lambda}$\quad
+    $\Delta R=\dfrac{c}{2B}$
+};
+
+% MMIC boundary
+\node[draw, dashed, thick, fit=(pll)(vco)(pa)(lna)(mixer)(if_amp)(lpf)(adc),
+      inner sep=0.6cm, label={[font=\bfseries]north:MMIC SoC (单芯片)}] {};
+
+\end{tikzpicture}
+\end{document}
