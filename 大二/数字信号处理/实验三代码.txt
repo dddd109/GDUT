@@ -1,0 +1,93 @@
+% =========================================================================
+% 实验三：IIR数字滤波器的设计 (完整修正版)
+% =========================================================================
+clc; clear; close all;
+
+%% 1. 混合信号的产生与分析 (模拟 mstg 函数功能)
+Fs = 10000;         % 采样频率 10kHz
+T = 1/Fs; Tp = 0.08;% 采样周期和观察时间
+N = Tp*Fs;          % 信号长度 N=800
+t = 0:T:(N-1)*T;    % 时间向量
+k = 0:N-1; f = k*Fs/N; % 频率向量
+
+% 产生三路调幅信号
+fc1 = Fs/10; fm1 = fc1/10; % 第1路：载波1000Hz，调制100Hz (频带 900~1100Hz)
+fc2 = Fs/20; fm2 = fc2/10; % 第2路：载波500Hz，调制50Hz  (频带 450~550Hz)
+fc3 = Fs/40; fm3 = fc3/10; % 第3路：载波250Hz，调制25Hz  (频带 225~275Hz)
+
+xt1 = cos(2*pi*fm1*t).*cos(2*pi*fc1*t);
+xt2 = cos(2*pi*fm2*t).*cos(2*pi*fc2*t);
+xt3 = cos(2*pi*fm3*t).*cos(2*pi*fc3*t);
+st = xt1 + xt2 + xt3; % 三路信号相加构成混合信号
+fxt = fft(st, N);     % 计算信号st的频谱
+
+% 绘制混合信号的时域波形和频域特性
+figure('Name', '实验三：混合信号分析');
+subplot(2,1,1);
+plot(t, st); grid on;
+xlabel('t/s'); ylabel('s(t)'); title('(a) s(t)的波形');
+axis([0 0.08 min(st) max(st)]);
+subplot(2,1,2);
+stem(f(1:N/2), abs(fxt(1:N/2))/max(abs(fxt)), '.'); grid on;
+xlabel('f/Hz'); ylabel('幅度'); title('(b) s(t)的频谱');
+axis([0 2000 0 1.2]);
+
+
+%% 2. 滤波器设计与信号分离
+Rp = 0.1; Rs = 60; % 设定通带最大衰减0.1dB，阻带最小衰减60dB
+
+% (1) 低通滤波器设计与滤波 (提取低频部分 xt3, 中心频率 250Hz)
+wp1 = 300/(Fs/2); ws1 = 400/(Fs/2); 
+[N1, Wn1] = ellipord(wp1, ws1, Rp, Rs);
+[b1, a1] = ellip(N1, Rp, Rs, Wn1);
+y1 = filter(b1, a1, st);
+
+% (2) 带通滤波器设计与滤波 (提取中频部分 xt2, 中心频率 500Hz)
+wp2 = [400 600]/(Fs/2); ws2 = [300 700]/(Fs/2); 
+[N2, Wn2] = ellipord(wp2, ws2, Rp, Rs);
+[b2, a2] = ellip(N2, Rp, Rs, Wn2);
+y2 = filter(b2, a2, st);
+
+% (3) 高通滤波器设计与滤波 (提取高频部分 xt1, 中心频率 1000Hz)
+wp3 = 800/(Fs/2); ws3 = 700/(Fs/2); 
+[N3, Wn3] = ellipord(wp3, ws3, Rp, Rs);
+[b3, a3] = ellip(N3, Rp, Rs, Wn3, 'high'); % 【核心修正】：添加 'high' 参数生成高通
+y3 = filter(b3, a3, st);
+
+
+%% 3. 绘制滤波器损耗曲线与分离信号波形
+% 排版为 3行2列，左侧为损耗曲线，右侧为滤波后的信号波形
+figure('Name', '实验三：IIR滤波器损耗曲线与滤波结果', 'Position', [100, 50, 900, 800]);
+
+% --- 低通滤波结果 ---
+[H1, w1] = freqz(b1, a1, 512);
+subplot(3,2,1); 
+plot(w1/pi, 20*log10(abs(H1))); grid on;
+title('低通滤波器损耗曲线'); xlabel('\omega/\pi'); ylabel('幅度(dB)'); 
+axis([0 1 -80 5]);
+subplot(3,2,2); 
+plot(t, y1); grid on;
+title('提取的低通信号 y_1(t)'); xlabel('t/s'); ylabel('y_1(t)'); 
+axis([0 0.08 -1 1]);
+
+% --- 带通滤波结果 ---
+[H2, w2] = freqz(b2, a2, 512);
+subplot(3,2,3); 
+plot(w2/pi, 20*log10(abs(H2))); grid on;
+title('带通滤波器损耗曲线'); xlabel('\omega/\pi'); ylabel('幅度(dB)'); 
+axis([0 1 -80 5]);
+subplot(3,2,4); 
+plot(t, y2); grid on;
+title('提取的带通信号 y_2(t)'); xlabel('t/s'); ylabel('y_2(t)'); 
+axis([0 0.08 -1 1]);
+
+% --- 高通滤波结果 ---
+[H3, w3] = freqz(b3, a3, 512);
+subplot(3,2,5); 
+plot(w3/pi, 20*log10(abs(H3))); grid on;
+title('高通滤波器损耗曲线'); xlabel('\omega/\pi'); ylabel('幅度(dB)'); 
+axis([0 1 -80 5]);
+subplot(3,2,6); 
+plot(t, y3); grid on;
+title('提取的高通信号 y_3(t)'); xlabel('t/s'); ylabel('y_3(t)'); 
+axis([0 0.08 -1 1]);
